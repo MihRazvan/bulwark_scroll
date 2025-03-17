@@ -8,3 +8,6 @@
 ![color2](https://github.com/user-attachments/assets/8443e3e9-f73a-457d-bc90-0e631641243b)
 ![color3](https://github.com/user-attachments/assets/38b86cfe-c2c3-4884-beb3-1e1905cc68cf)
 ![color4](https://github.com/user-attachments/assets/e04ce402-d934-4c58-9f36-f29b0b2f24f2)
+
+# Splitter
+![splitter (1)](https://github.com/user-attachments/assets/c29af6b5-d9ab-4830-b41c-7f1130aaffe5)
