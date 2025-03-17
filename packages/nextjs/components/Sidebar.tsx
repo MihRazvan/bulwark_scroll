@@ -60,14 +60,7 @@ const Sidebar = () => {
         <div className="w-full h-full md:w-64 md:min-h-screen bg-brand-background border-r border-neutral-800 flex flex-col sticky top-0">
           <div className="flex justify-end md:justify-start p-4 mb-6 mt-2">
             <Link href="/" className="block">
-              <Image
-                src="/logo.png"
-                alt="BULWARK"
-                width={150}
-                height={40}
-                className="h-auto w-auto dark:invert"
-                priority
-              />
+              <Image src="/logo.png" alt="BULWARK" width={150} height={40} className="h-auto w-auto" priority />
             </Link>
           </div>
 
