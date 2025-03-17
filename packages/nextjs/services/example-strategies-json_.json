@@ -13,11 +13,7 @@
       ],
       "explanation": "This conservative strategy focuses on supplying USDC to AAVE to earn a stable yield. USDC is a stablecoin with minimal price volatility, making this the safest approach with predictable returns.",
       "total_expected_apy": 3.75,
-      "risk_factors": [
-        "Smart contract risk",
-        "Stable market conditions",
-        "Low liquidation risk"
-      ]
+      "risk_factors": ["Smart contract risk", "Stable market conditions", "Low liquidation risk"]
     },
     {
       "risk_level": 2,
@@ -39,11 +35,7 @@
       ],
       "explanation": "This moderately conservative strategy involves supplying both USDC and ETH to AAVE. While most assets remain in stable USDC, a small ETH position adds potential for higher returns with slightly increased volatility risk.",
       "total_expected_apy": 3.45,
-      "risk_factors": [
-        "ETH price volatility",
-        "Smart contract risk",
-        "Moderate market exposure"
-      ]
+      "risk_factors": ["ETH price volatility", "Smart contract risk", "Moderate market exposure"]
     },
     {
       "risk_level": 3,

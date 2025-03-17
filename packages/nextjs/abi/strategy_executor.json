@@ -1,0 +1,47 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint8",
+            "name": "protocol",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "action",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "extraData",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct StrategyExecutor.StrategyStep[]",
+        "name": "steps",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "executeStrategy",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  }
+]

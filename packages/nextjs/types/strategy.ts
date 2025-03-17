@@ -3,10 +3,23 @@
  */
 export interface StrategyStep {
   protocol: string;
-  action: "supply" | "borrow";
+  action:
+    | "supply"
+    | "borrow"
+    | "withdraw"
+    | "repay"
+    | "swap"
+    | "add_liquidity"
+    | "remove_liquidity"
+    | "borrow_usdq"
+    | "repay_usdq"
+    | "provide_stability";
   token: string;
   amount: number;
   expected_apy: number;
+  token_to?: string;
+  usdq_amount?: number;
+  interest_rate?: number;
 }
 
 /**
