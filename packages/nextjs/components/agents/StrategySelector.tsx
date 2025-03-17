@@ -134,7 +134,7 @@ const StrategySelector: React.FC = () => {
         })}
       </div>
 
-      <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} txHash={txHash} />
+      <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} txHash={txHash || ""} />
     </>
   );
 };
