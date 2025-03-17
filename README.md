@@ -48,7 +48,7 @@ Now is the perfect moment to build an AI-powered, fully automated DeFi vault sys
 ---
 
 ## Existing Solutions vs. Bulwark
-While some vault projects exist (Yearn, Beefy, Idle), Bulwark is different:
+While some vault projects exist (Yearn, Beefy, Idle, SummerFi, DeFiSaver), Bulwark is different:
 
 | Feature               | Yearn Finance | SummerFi | Bulwark |
 |----------------------|--------------|--------------|---------|
