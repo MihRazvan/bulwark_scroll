@@ -70,14 +70,14 @@ Bulwark combines AI, DeFi automation, and risk-aware strategy execution in a sea
 
 ---
 
-## Tech Stack
+## Architecture
 - **Frontend:** React (Next.js), Tailwind CSS, ethers.js
 - **Backend:** FastAPI (Python), OpenAI API, WebSockets
 - **Blockchain:** Solidity (Scroll L2), AAVE V3, Compound V3, Quill, Ambient
 - **AI Engine:** OpenAI GPT-4 for strategy generation
 - **Monitoring:** Real-time liquidation alerts and strategy rebalancing
 
-![10  tech stack (1)](https://github.com/user-attachments/assets/bba6bf27-0856-443c-ac47-f3ab0fc89a88)
+![9  ai agent architecture (4)](https://github.com/user-attachments/assets/5c6cf3b0-45e2-4f18-a2ce-8a2c09768ee4)
 
 ---
 
