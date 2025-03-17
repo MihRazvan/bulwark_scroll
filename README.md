@@ -3,7 +3,7 @@
 ![github banner](https://github.com/user-attachments/assets/8af1707f-605b-4634-90fb-0df0039963dd)
 Bulwark is an AI-driven, automated DeFi vault system that optimizes yield strategies across lending, DEX, and yield protocols while ensuring risk-adjusted portfolio management.
 
-[Demo]() | [Prototype App](https://bulwark-scroll.vercel.app/) | [Slide Deck](https://github.com/jen-sei/bulwark-OpenScroll/blob/main/docs/slide-deck.md) | [AI Agent Architecture](https://github.com/jen-sei/bulwark-OpenScroll/blob/main/docs/ai-agent-architecture.md) | [Contribution Guide](https://github.com/jen-sei/bulwark-OpenScroll/blob/main/docs/contribution-guide.md) | [Design Files](https://github.com/jen-sei/bulwark-OpenScroll/blob/main/docs/design-files.md) | [UI Mockups](https://github.com/jen-sei/bulwark-OpenScroll/blob/main/docs/ui-mockups.md)
+[Demo]() | [Prototype App](https://bulwark-scroll.vercel.app/) | [Slide Deck](https://github.com/MihRazvan/bulwark_scroll/blob/main/docs/slide-deck.md) | [AI Agent Architecture](https://github.com/MihRazvan/bulwark_scroll/blob/main/docs/ai-agent-architecture.md) | [Contribution Guide](https://github.com/MihRazvan/bulwark_scroll/blob/main/docs/contribution-guide.md) | [Design Files](https://github.com/MihRazvan/bulwark_scroll/blob/main/docs/design-files.md) | [UI Mockups](https://github.com/MihRazvan/bulwark_scroll/blob/main/docs/ui-mockups.md)
 
 ---
 ## Team
@@ -19,7 +19,7 @@ Our combined experience spans DeFi infrastructure, AI-driven portfolio managemen
 DeFi users face several key challenges:
 1. **Overwhelming Complexity** – Managing DeFi positions across multiple protocols requires constant monitoring and rebalancing.
 2. **Risk Mismanagement** – Many users do not fully understand liquidation risks, yield fluctuations, or optimal collateralization ratios.
-3. **Execution Friction** – Moving assets between lending, trading, and staking platforms is inefficient and costly.
+3. **Execution Friction** – Moving assets between lending, trading, and staking platforms is inefficient and time-costly.
 
 These challenges make it difficult for users to optimize yield while maintaining capital efficiency and security.
 
@@ -40,8 +40,8 @@ Bulwark automates DeFi portfolio management with AI-driven strategy generation a
 ## Why Now?
 DeFi adoption is surging, but:
 - Users lack **intelligent portfolio automation** tools.
-- AI-powered financial management is revolutionizing **TradFi**, and DeFi is the next frontier.
-- The emergence of **Scroll Layer 2** and modular smart contract execution creates new efficiencies.
+- AI-powered financial management is revolutionizing **TradFi**, and DeFi is the next frontier, with much composability and ease of use.
+- The emergence of **Layer 2s** like **Scroll* and modular smart contract execution creates new efficiencies.
 
 Now is the perfect moment to build an AI-powered, fully automated DeFi vault system.
 
@@ -50,13 +50,13 @@ Now is the perfect moment to build an AI-powered, fully automated DeFi vault sys
 ## Existing Solutions vs. Bulwark
 While some vault projects exist (Yearn, Beefy, Idle), Bulwark is different:
 
-| Feature               | Yearn Finance | Beefy Finance | Bulwark |
+| Feature               | Yearn Finance | SummerFi | Bulwark |
 |----------------------|--------------|--------------|---------|
 | AI-Driven Strategies | ❌ No        | ❌ No        | ✅ Yes  |
-| Risk Categorization  | ❌ No        | ❌ No        | ✅ Yes  |
+| Risk Categorization  | ❌ No        | ✅ Yes        | ✅ Yes  |
 | Multi-Protocol Execution | ✅ Yes | ✅ Yes | ✅ Yes |
 | Automated Rebalancing | ❌ No | ❌ No | ✅ Yes |
-| Liquidation Risk Monitoring | ❌ No | ❌ No | ✅ Yes |
+| Liquidation Risk Monitoring | ❌ No | ✅ Yes | ✅ Yes |
 
 Bulwark combines AI, DeFi automation, and risk-aware strategy execution in a seamless, user-friendly experience.
 
@@ -82,9 +82,9 @@ Bulwark combines AI, DeFi automation, and risk-aware strategy execution in a sea
 ---
 
 ## Smart Contracts
-[SimpleAaveStrategy.sol](https://scrollscan.com/address/0xbCfac93bbC5F93c37f3743792A372e9fe3979Ea6)
+1. [SimpleAaveStrategy.sol](https://scrollscan.com/address/0xbCfac93bbC5F93c37f3743792A372e9fe3979Ea6)
 
-[StrategyExecutor.sol](https://scrollscan.com/address/0xc8c34998f0aE64989Cc43f3f3b657d5f050235F4)
+2. [StrategyExecutor.sol](https://scrollscan.com/address/0xc8c34998f0aE64989Cc43f3f3b657d5f050235F4)
 
 ---
 
