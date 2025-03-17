@@ -6,8 +6,10 @@ export const STRATEGY_EXECUTOR_ADDRESS = "0xc8c34998f0aE64989Cc43f3f3b657d5f0502
 export const TOKEN_ADDRESSES: Record<string, Record<string, `0x${string}`>> = {
   // Scroll addresses
   534352: {
+    WETH: "0x5300000000000000000000000000000000000004" as `0x${string}`, // WETH on Scroll
     USDC: "0x06eFdBFf2a14a7c8E15944D1F4A48F9F95F663A4" as `0x${string}`,
     SRC: "0xd29687c813D741E2F938F4aC377128810E217b1b" as `0x${string}`,
+    USDQ: "0x6F2A1A886Dbf8E36C4fa9F25a517861A930fBF3A" as `0x${string}`,
   },
 
   // TODO delete this
@@ -20,6 +22,7 @@ export const TOKEN_ADDRESSES: Record<string, Record<string, `0x${string}`>> = {
 // Token decimals
 export const TOKEN_DECIMALS: Record<string, number> = {
   USDC: 6,
-  ETH: 18,
+  WETH: 18,
   SRC: 18,
+  USDQ: 18,
 };

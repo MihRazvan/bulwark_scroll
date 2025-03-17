@@ -17,13 +17,11 @@ const GAS_RESERVE = "0.0001"; // Reserve 0.01 ETH for gas fees
 
 const StrategySelector: React.FC = () => {
   const [selectedStrategy, setSelectedStrategy] = useState<number | null>(null);
-  const [isExecuting, setIsExecuting] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [isBalancesZero, setIsBalancesZero] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [executedStrategy, setExecutedStrategy] = useState<Strategy | null>(null);
-
+  const [txHash, setTxHash] = useState<string | null>(null);
   const { address } = useAccount();
   const { balances, isLoading: isBalancesLoading } = useBalances();
   const strategies = useStrategiesStore(state => state.strategies);
@@ -117,7 +115,8 @@ const StrategySelector: React.FC = () => {
                   <ExecuteStrategyButton
                     strategy={strategy}
                     amount={balances.USDC || "0"}
-                    onSuccess={() => {
+                    onSuccess={txHash => {
+                      setTxHash(txHash);
                       setIsPopupOpen(true);
                     }}
                   />
@@ -135,7 +134,7 @@ const StrategySelector: React.FC = () => {
         })}
       </div>
 
-      <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+      <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} txHash={txHash || ""} />
     </>
   );
 };
