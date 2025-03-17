@@ -38,7 +38,7 @@ const ExecuteStrategyButton: React.FC<ExecuteStrategyButtonProps> = ({ amount, o
     isSuccess: isExecuteSuccess,
     isError: isExecuteError,
     error: executeError,
-  } = useExecuteStrategy(amount, strategy);
+  } = useExecuteStrategy(strategy);
 
   const handleExecute = async () => {
     try {
@@ -88,6 +88,12 @@ const ExecuteStrategyButton: React.FC<ExecuteStrategyButtonProps> = ({ amount, o
     if (isExecuteSuccess && currentStep === "executing") {
       setIsExecuting(false);
       setCurrentStep("idle");
+      onSuccess?.();
+    }
+
+    // Handle success
+    if (isExecuteSuccess && currentStep === "success") {
+      setIsExecuting(false);
       onSuccess?.();
     }
   }, [

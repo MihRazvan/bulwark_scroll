@@ -11,11 +11,9 @@ import { useStrategiesStore } from "~~/services/store/strategies";
 import { Strategy } from "~~/types/strategy";
 import areAllBalancesZero from "~~/utils/areAllBalancesZero";
 
-const selectedStrategies = [
-  strategiesData.strategies[0],
-  strategiesData.strategies[2],
-  strategiesData.strategies[4],
-] as unknown as Strategy[];
+const selectedStrategies = strategiesData.strategies as unknown as Strategy[];
+
+const GAS_RESERVE = "0.0001"; // Reserve 0.01 ETH for gas fees
 
 const StrategySelector: React.FC = () => {
   const [selectedStrategy, setSelectedStrategy] = useState<number | null>(null);
@@ -41,7 +39,14 @@ const StrategySelector: React.FC = () => {
             return;
           }
           setIsLoading(true);
-          const success = await generateStrategies(address, balances);
+          const prepareBalances = { ...balances };
+          if (prepareBalances.ETH) {
+            // Convert ETH balance to number, subtract gas reserve, and convert back to string
+            const ethBalance = parseFloat(prepareBalances.ETH);
+            const ethForStrategies = Math.max(0, ethBalance - parseFloat(GAS_RESERVE)).toString();
+            prepareBalances.ETH = ethForStrategies;
+          }
+          const success = await generateStrategies(address, prepareBalances);
           // const success = await generateStrategies(address, {
           //   USDC: "1000",
           //   // ETH: "0.01",

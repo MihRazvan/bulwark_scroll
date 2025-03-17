@@ -1,6 +1,8 @@
 // Contract address for the Aave strategy
 export const STRATEGY_ADDRESS = "0xbCfac93bbC5F93c37f3743792A372e9fe3979Ea6";
 
+export const STRATEGY_EXECUTOR_ADDRESS = "0xc8c34998f0aE64989Cc43f3f3b657d5f050235F4";
+
 export const TOKEN_ADDRESSES: Record<string, Record<string, `0x${string}`>> = {
   // Scroll addresses
   534352: {
