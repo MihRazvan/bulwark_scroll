@@ -6,6 +6,7 @@ import Image from "next/image";
 interface PopupProps {
   isOpen: boolean;
   onClose: () => void;
+  txHash: string;
 }
 
 const socialLinks = [
@@ -15,7 +16,7 @@ const socialLinks = [
   { icon: "/social/4.svg", url: "mailto:info@bulwark.finance", name: "Email" },
 ];
 
-const Popup: React.FC<PopupProps> = ({ isOpen, onClose }) => {
+const Popup: React.FC<PopupProps> = ({ isOpen, onClose, txHash }) => {
   const popupRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,13 +47,11 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const title = "Your Agent is Deployed!";
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div
         ref={popupRef}
-        className="relative rounded-xl p-6 max-w-md w-full mx-4 z-10 shadow-xl animate-fadeIn overflow-hidden px-10 py-16"
+        className="relative rounded-xl p-6 max-w-md w-full mx-4 z-10 shadow-xl animate-fadeIn overflow-hidden px-10 pt-16 pb-4"
         style={{
           // backgroundColor: "rgba(255, 255, 255, 0.1)",
           backdropFilter: "blur(71.5px)", // Blur only what's behind this div
@@ -92,6 +91,19 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose }) => {
               </a>
             ))}
           </div>
+
+          {txHash && (
+            <div className="text-black font-inter font-light text-sm mt-8">
+              <a
+                href={`https://scrollscan.com/tx/${txHash}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-orange-accent hover:underline break-all"
+              >
+                {txHash}
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </div>

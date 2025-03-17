@@ -10,7 +10,7 @@ import { Strategy } from "~~/types/strategy";
 interface ExecuteStrategyButtonProps {
   strategy: Strategy;
   amount: string;
-  onSuccess?: () => void;
+  onSuccess?: (txHash: string | null) => void;
   onError?: (error: Error) => void;
 }
 
@@ -18,6 +18,8 @@ const ExecuteStrategyButton: React.FC<ExecuteStrategyButtonProps> = ({ amount, o
   const [isExecuting, setIsExecuting] = useState(false);
   const [currentStep, setCurrentStep] = useState<"idle" | "approving" | "executing" | "success">("idle");
   const { targetNetwork } = useTargetNetwork();
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [txHash, setTxHash] = useState<string | null>(null);
 
   // Get USDC token address for current chain
   const chainId = targetNetwork.id.toString();
@@ -43,6 +45,7 @@ const ExecuteStrategyButton: React.FC<ExecuteStrategyButtonProps> = ({ amount, o
   const handleExecute = async () => {
     try {
       setIsExecuting(true);
+      setIsSuccess(false);
 
       // Step 1: Approve tokens
       setCurrentStep("approving");
@@ -57,6 +60,7 @@ const ExecuteStrategyButton: React.FC<ExecuteStrategyButtonProps> = ({ amount, o
       console.log("Executing strategy...");
       const executeTx = await executeStrategyAsync();
       console.log("Strategy execution tx hash:", executeTx);
+      setTxHash(executeTx || null);
 
       console.log("Strategy execution complete");
       setCurrentStep("success");
@@ -85,16 +89,18 @@ const ExecuteStrategyButton: React.FC<ExecuteStrategyButtonProps> = ({ amount, o
     }
 
     // Handle success
-    if (isExecuteSuccess && currentStep === "executing") {
+    if (isExecuteSuccess && currentStep === "executing" && !isSuccess) {
       setIsExecuting(false);
       setCurrentStep("idle");
-      onSuccess?.();
+      setIsSuccess(true);
+      onSuccess?.(txHash);
     }
 
     // Handle success
-    if (isExecuteSuccess && currentStep === "success") {
+    if (isExecuteSuccess && currentStep === "success" && !isSuccess) {
       setIsExecuting(false);
-      onSuccess?.();
+      setIsSuccess(true);
+      onSuccess?.(txHash);
     }
   }, [
     isApproveSuccess,
